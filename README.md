@@ -35,6 +35,11 @@ The module interacts with the BetaProject repository's songs.json file located a
 ../BetaProject/data/songs.json
 ```
 
+You can override this path by setting the `BETAPROJECT_SONGS_PATH` environment variable:
+```bash
+export BETAPROJECT_SONGS_PATH=/path/to/your/BetaProject/data/songs.json
+```
+
 ## Requirements
 
 - Node.js

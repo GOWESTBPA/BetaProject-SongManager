@@ -5,7 +5,8 @@ const fs = require('fs');
 const path = require('path');
 
 // Path to BetaProject repository's songs.json file
-const SONGS_FILE_PATH = path.join(__dirname, '../BetaProject/data/songs.json');
+// Can be overridden by setting BETAPROJECT_SONGS_PATH environment variable
+const SONGS_FILE_PATH = process.env.BETAPROJECT_SONGS_PATH || path.join(__dirname, '../BetaProject/data/songs.json');
 
 // Function to read songs from the BetaProject repository
 function readSongs() {
@@ -37,8 +38,10 @@ function addSong(title, artist) {
     if (writeSongs(songs)) {
         console.log(`Added song: "${title}" by ${artist}`);
         return true;
+    } else {
+        console.error(`Failed to add song: "${title}" by ${artist}`);
+        return false;
     }
-    return false;
 }
 
 // Function to delete a song by title
@@ -51,11 +54,14 @@ function deleteSong(title) {
         if (writeSongs(songs)) {
             console.log(`Deleted song: "${removedSong.title}" by ${removedSong.artist}`);
             return true;
+        } else {
+            console.error(`Failed to delete song: "${removedSong.title}" by ${removedSong.artist}`);
+            return false;
         }
     } else {
         console.log(`Song "${title}" not found.`);
+        return false;
     }
-    return false;
 }
 
 // Export functions
