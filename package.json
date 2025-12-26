@@ -1,0 +1,12 @@
+{
+  "name": "song-manager",
+  "version": "1.0.0",
+  "description": "An Electron app to manage songs",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "electron": "^25.0.0"
+  }
+}
