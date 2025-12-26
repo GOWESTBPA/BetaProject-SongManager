@@ -28,8 +28,7 @@
     "win": {
       "target": "nsis",
       "icon": "build/icon.ico",
-      "signAndEditExecutable": false,
-      "publisherName": ""
+      "signAndEditExecutable": false
     },
     "mac": {
       "target": "dmg",
