@@ -11,7 +11,7 @@
   },
   "devDependencies": {
     "electron": "^25.0.0",
-    "electron-builder": "^25.7.0"
+    "electron-builder": "^26.0.12"
   },
   "build": {
     "appId": "com.yourname.songmanager",
@@ -27,7 +27,9 @@
     ],
     "win": {
       "target": "nsis",
-      "icon": "build/icon.ico"
+      "icon": "build/icon.ico",
+      "signAndEditExecutable": false,
+      "publisherName": ""
     },
     "mac": {
       "target": "dmg",
