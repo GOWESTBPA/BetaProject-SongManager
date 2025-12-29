@@ -1,46 +1,17 @@
-// Assume songs.json is already loaded as 'songsData'
-// UI elements and interactions for deleting a song
+// UI elements and interactions for Add Song and Delete Song buttons
 
 document.addEventListener('DOMContentLoaded', () => {
-    const songList = document.getElementById('song-list'); // Assume an element displays songs
+    const addSongButton = document.getElementById('add-song');
+    const deleteSongButton = document.getElementById('delete-song');
 
-    // Function to render the song list dynamically
-    function renderSongs(songs) {
-        songList.innerHTML = '';
-        songs.forEach((song, index) => {
-            const songItem = document.createElement('li');
-            songItem.textContent = `${song.title} - ${song.artist}`;
+    // Add event listeners for the buttons
+    addSongButton.addEventListener('click', () => {
+        // Add song logic placeholder
+        console.log('Add Song button clicked');
+    });
 
-            const deleteButton = document.createElement('button');
-            deleteButton.textContent = 'Delete';
-            deleteButton.addEventListener('click', () => deleteSong(index));
-
-            songItem.appendChild(deleteButton);
-            songList.appendChild(songItem);
-        });
-    }
-
-    // Delete song logic
-    function deleteSong(index) {
-        // Remove song from UI and songs' data
-        const removedSong = songsData.songs.splice(index, 1);
-
-        if (removedSong) {
-            // Update songs.json file dynamically
-            saveSongsData();
-        }
-    }
-
-    // Save updated song data to songs.json
-    function saveSongsData() {
-        const fs = require('fs'); // Node.js file system
-        const path = require('path');
-        const filePath = path.join(__dirname, 'BetaProject/data/songs.json');
-
-        fs.writeFileSync(filePath, JSON.stringify(songsData, null, 2), 'utf8');
-        renderSongs(songsData.songs); // Re-render UI with updated list
-    }
-
-    // Initial render of songs
-    renderSongs(songsData.songs);
+    deleteSongButton.addEventListener('click', () => {
+        // Delete song logic placeholder
+        console.log('Delete Song button clicked');
+    });
 });
