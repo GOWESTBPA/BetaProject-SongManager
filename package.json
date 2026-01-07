@@ -1,38 +1,8 @@
 {
   "name": "BetaProject-SongManager",
   "version": "1.0.0",
-  "description": "A song management app",
-  "main": "main.js",
+  "description": "A song management module for BetaProject",
+  "main": "index.js",
   "author": "YourName",
-  "license": "MIT",
-  "scripts": {
-    "start": "electron .",
-    "dist": "electron-builder"
-  },
-  "devDependencies": {
-    "electron": "^25.0.0",
-    "electron-builder": "^26.0.12"
-  },
-  "build": {
-    "appId": "com.yourname.songmanager",
-    "productName": "SongManager",
-    "directories": {
-      "output": "dist"
-    },
-    "files": [
-      "**/*",
-      "!node_modules/**/*.md",
-      "!node_modules/.bin",
-      "!node_modules/**/test"
-    ],
-    "win": {
-      "target": "nsis",
-      "icon": "build/icon.ico",
-      "signAndEditExecutable": false
-    },
-    "mac": {
-      "target": "dmg",
-      "icon": "build/icon.icns"
-    }
-  }
+  "license": "MIT"
 }
